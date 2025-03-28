@@ -1,0 +1,36 @@
+<header class="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg p-0">
+          <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Quick Notes Tracker's Logo">
+          </a>
+
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navigationBars" aria-controls="navigationBars" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse ms-auto" id="navigationBars">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item <%= path === '/' ? 'active' : '' %>">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item <%= path === '/notes' ? 'active' : '' %>">
+                <a class="nav-link" href="/notes">Notes</a>
+              </li>
+              <li class="nav-item <%= path === '/important-notes' ? 'active' : '' %>">
+                <a class="nav-link" href="/important-notes">Important Notes</a>
+              </li>
+              <li class="nav-item <%= path === '/add-note' ? 'active' : '' %>">
+                <a class="nav-link" href="/add-note">Add Note</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

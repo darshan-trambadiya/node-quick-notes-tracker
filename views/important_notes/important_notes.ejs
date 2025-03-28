@@ -1,0 +1,49 @@
+<%- include('../shared/views/start.ejs') %>
+  <%- include('../shared/views/navigation.ejs') %>
+
+    <main>
+      <section class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="section-title">
+              <h2>Your Important Notes</h2>
+              <p>Below are the notes which are marked as Important!</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <% if (importantNotes.length> 0) { %>
+            <% importantNotes.forEach(impNote=> { %>
+              <div class="card mb-3 animate__animated animate__pulse">
+                <div class="card-body">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="mb-3">
+                      <div>
+                        <%= impNote.title %>
+                      </div>
+                      <div>
+                        <%= impNote.priority %>
+                      </div>
+                      <div>
+                        <%= impNote.description %>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                      <a href="/notes/<%= impNote.id %>" class="btn btn-small">Details</a>
+                      <%- include('../shared/remove_as_important_note.ejs', { note: impNote, fromView: 'IMPORTANT_NOTES' }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+                <% } else { %>
+                  <div class="col-12">
+                    <h3 class="text-center">You don't have any Important Notes!</h3>
+                  </div>
+                  <% } %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../shared/views/end.ejs') %>

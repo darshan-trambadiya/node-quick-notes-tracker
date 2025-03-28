@@ -1,0 +1,26 @@
+{
+  "name": "quick-notes-tracker",
+  "version": "1.0.0",
+  "description": "Quick Notes Tracker built with NodeJs, EJS Template for view, Bootstrap & File as database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Node.js",
+    "EJS",
+    "Bootstrap",
+    "fs"
+  ],
+  "author": "Darshan Trambadiya",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

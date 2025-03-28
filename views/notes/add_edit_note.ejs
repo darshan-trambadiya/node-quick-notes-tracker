@@ -1,0 +1,71 @@
+<%- include('../shared/views/start.ejs') %>
+    <%- include('../shared/views/navigation.ejs') %>
+        <main>
+            <div class="container">
+                <section class="contact-form">
+                    <div class="container">
+                        <form class="row justify-content-center"
+                            action="<% if (editing) { %>/edit-note<% } else { %>/add-note<% } %>" method="POST">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="block">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" name="title" class="form-control" id="title"
+                                            value="<% if (editing) { %><%= note.title %><% } %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="selectPriority">Select Priority</label>
+                                        <select class="form-control form-select form-control-select" id="selectPriority"
+                                            name="priority" aria-label="Please select note priority">
+                                            <option value="VeryLow" <%=editing && note.priority==='VeryLow' ? 'selected'
+                                                : '' %>>
+                                                Very Low
+                                            </option>
+                                            <option value="Low" <%=editing && note.priority==='Low' ? 'selected' : '' %>
+                                                >
+                                                Low</option>
+                                            <option value="Medium" <%=editing && note.priority==='Medium' ? 'selected'
+                                                : '' %>>
+                                                Medium</option>
+                                            <option value="High" <%=editing && note.priority==='High' ? 'selected' : ''
+                                                %>>
+                                                High</option>
+                                            <option value="VeryHigh" <%=editing && note.priority==='VeryHigh'
+                                                ? 'selected' : '' %>>
+                                                Very High</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group-2">
+                                        <label for="description">Description</label>
+                                        <textarea name="description" id="description" class="form-control"
+                                            rows="5"><% if (editing) { %><%= note.description %><% } %></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="isImportantCheckbox">
+                                                Is Important
+                                            </label>
+                                            <input class="form-check-input" type="checkbox" id="isImportantCheckbox"
+                                                name="isImportant" value="true" <% if (editing && note.isImportant) {
+                                                %>checked<% } %>>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <% if (editing) { %>
+                                            <input type="hidden" value="<%= note.id %>" name="noteId">
+                                            <input type="hidden" value="<%= note.createdAt %>" name="createdAt">
+                                            <% } %>
+                                    </div>
+
+                                    <button class="btn btn-small" type="submit">
+                                        <% if (editing) { %>Update Note<% } else { %>Add Note<% } %>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <%- include('../shared/views/end.ejs') %>

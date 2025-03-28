@@ -1,0 +1,56 @@
+<%- include('../shared/views/start.ejs') %>
+  <%- include('../shared/views/navigation.ejs') %>
+
+    <main>
+      <section class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="section-title">
+              <h2>Your Notes</h2>
+              <p>These are the notes which are created yet!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <% if (notes.length> 0) { %>
+            <% for (let note of notes) { %>
+              <div class="col-md-4 mb-4 animate__animated animate__zoomInDown">
+                <div class="card border-dark h-100">
+                  <div class="card-header">ID: <%= note.id %>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= note.title %>
+                    </h5>
+                    <p class="card-text">
+                      <%= note.priority %>
+                    </p>
+                    <div class="d-flex justify-content-center flex-wrap gap-3">
+                      <a href="/notes/<%= note.id %>" class="btn btn-small">Details</a>
+                      <a href="/edit-note/<%= note.id %>?edit=true" class="btn btn-small">Edit</a>
+                      <form action="/delete-note/<%= note.id %>" method="POST">
+                        <button class="btn btn-danger theme-btn" type="submit">Delete</button>
+                      </form>
+                      <% if (note.isImportant===true) { %>
+                        <%- include('../shared/remove_as_important_note.ejs', { note: note, fromView: 'NOTES_LISTING' })
+                          %>
+                          <% } else { %>
+                            <%- include('../shared/mark_as_important_note.ejs', { note: note, fromView: 'NOTES_LISTING'
+                              }) %>
+                              <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+                <% } else { %>
+                  <div class="col-12">
+                    <h3 class="text-center">No Notes Found!</h3>
+                  </div>
+                  <% } %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../shared/views/end.ejs') %>

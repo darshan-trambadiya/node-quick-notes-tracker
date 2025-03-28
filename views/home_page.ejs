@@ -1,0 +1,130 @@
+<%- include('shared/views/start.ejs') %>
+    <%- include('shared/views/navigation.ejs') %>
+
+        <main>
+            <section class="slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 position-relative">
+                            <div class="block">
+                                <h1 class="animate__animated animate__fadeInUp">A Quick Notes Tracker</h1>
+                                <p class="animate__animated animate__fadeInUp">Built up with Node.js, EJS Template &#38;
+                                    Bootstrap, Files as a database!</br> It stores data within the server with fs, and
+                                    shows CRUD operation.
+                                </p>
+                                <a href="/add-note" class="btn btn-main animate__animated animate__fadeInUp">Start By
+                                    Creating Note</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <div class="section-title">
+                                    <h2 class="animate__animated animate__shakeY">About This Project</h2>
+                                    <p>Quick Notes Tracker is a Node.js-based application designed to streamline
+                                        note-taking with essential features that enhance organization and flexibility.
+                                        Users can create, edit, and delete notes, mark notes as important, and view
+                                        detailed information for each note. All data is stored locally using files as a
+                                        database, making it simple and accessible without complex configurations.</p>
+                                </div>
+                                <div class="container my-5">
+                                    <!-- Key Features Section -->
+                                    <section>
+                                        <h2 class="text-center mb-4">Key Features</h2>
+                                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                                            <div class="col">
+                                                <div class="card h-100 shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Create, Edit, and Delete Notes</h5>
+                                                        <p class="card-text">Easily manage personal notes by adding,
+                                                            modifying, or removing them as needed.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Detailed Note Navigation</h5>
+                                                        <p class="card-text">Navigate to individual note details for
+                                                            more in-depth information.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Mark as Important</h5>
+                                                        <p class="card-text">Highlight crucial notes by marking them as
+                                                            important for easy identification.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">File-Based Database</h5>
+                                                        <p class="card-text">Stores notes as files locally, providing a
+                                                            lightweight, database-free solution.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <!-- Technologies Used Section -->
+                                    <section class="mt-5">
+                                        <h2 class="text-center mb-4">Technologies Used</h2>
+                                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                            <div class="col">
+                                                <div class="card h-100 tech-card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tech-title">Backend</h5>
+                                                        <p class="card-text">Node.js and Express for handling
+                                                            server-side operations</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 tech-card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tech-title">Frontend</h5>
+                                                        <p class="card-text">EJS template engine with Bootstrap 5 and
+                                                            animate.css for styling and animations</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 tech-card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tech-title">Data Handling</h5>
+                                                        <p class="card-text">fs.promises with async/await for efficient
+                                                            file operations</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100 tech-card shadow-sm">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title tech-title">Middleware</h5>
+                                                        <p class="card-text">body-parser for handling form submissions
+                                                            and request data</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%- include('shared/views/end.ejs') %>
